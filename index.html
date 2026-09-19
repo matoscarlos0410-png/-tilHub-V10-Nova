@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="ÚtilHub V10 Nova - herramientas útiles en un solo lugar">
+  <title>ÚtilHub V10 — Nova</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- NOVA FLOW -->
+  <div id="nova-flow" aria-hidden="true">
+    <div class="nova-orb orb-1"></div>
+    <div class="nova-orb orb-2"></div>
+    <div class="nova-orb orb-3"></div>
+    <div class="nova-glow"></div>
+    <div id="particles"></div>
+    <div id="stars"></div>
+  </div>
+
+  <header class="header">
+    <a href="#inicio" class="brand">
+      <span class="brand-icon">✦</span>
+      <span>ÚtilHub</span>
+      <small>V10 NOVA</small>
+    </a>
+
+    <button id="menuBtn" class="menu-btn">☰</button>
+
+    <nav id="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#herramientas">Herramientas</a>
+      <a href="#comida">Comida</a>
+      <a href="#compras">Compras</a>
+      <a href="#cerca">Cerca de mí</a>
+      <a href="#ajustes">Ajustes</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="inicio" class="hero">
+      <div class="hero-content">
+        <div class="nova-badge">✦ NOVA FLOW ACTIVADO</div>
+
+        <h1>Todo lo útil,<br><span>en un solo lugar.</span></h1>
+
+        <p>
+          Calcula, organiza, busca, convierte y encuentra
+          lo que necesitas con ÚtilHub V10 — Nova.
+        </p>
+
+        <div class="search-box">
+          <span>⌕</span>
+          <input id="globalSearch" type="search"
+                 placeholder="¿Qué necesitas?">
+          <kbd>Ctrl K</kbd>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#herramientas" class="btn primary">Explorar herramientas</a>
+          <a href="#cerca" class="btn secondary">Cerca de mí</a>
+        </div>
+
+        <div class="connection">
+          <span id="connectionDot"></span>
+          <span id="connectionText">Comprobando conexión...</span>
+        </div>
+      </div>
+
+      <div class="hero-nova">
+        <div class="nova-core">
+          <span>✦</span>
+        </div>
+        <div class="nova-ring ring-1"></div>
+        <div class="nova-ring ring-2"></div>
+        <div class="nova-ring ring-3"></div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <strong>30+</strong>
+        <span>Herramientas</span>
+      </div>
+      <div class="stat">
+        <strong>100%</strong>
+        <span>Fácil de usar</span>
+      </div>
+      <div class="stat">
+        <strong>V10</strong>
+        <span>Nova</span>
+      </div>
+      <div class="stat">
+        <strong>⚡</strong>
+        <span>Rápido</span>
+      </div>
+    </section>
+
+    <section id="herramientas" class="section">
+      <div class="section-title">
+        <span>⚡</span>
+        <div>
+          <h2>Herramientas</h2>
+          <p>Utilidades para estudiar, calcular y organizarte.</p>
+        </div>
+      </div>
+
+      <div class="category-buttons">
+        <button class="category active" data-category="all">Todas</button>
+        <button class="category" data-category="calculo">Cálculo</button>
+        <button class="category" data-category="tiempo">Tiempo</button>
+        <button class="category" data-category="texto">Texto</button>
+        <button class="category" data-category="organizacion">Organización</button>
+        <button class="category" data-category="otros">Otros</button>
+      </div>
+
+      <div id="toolsGrid" class="tools-grid">
+
+        <article class="tool-card" data-name="calculadora calculo matematicas"
+                 data-category="calculo">
+          <div class="tool-icon">🧮</div>
+          <h3>Calculadora</h3>
+          <p>Realiza operaciones matemáticas.</p>
+          <button onclick="openTool('calculator')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="porcentaje porcentaje"
+                 data-category="calculo">
+          <div class="tool-icon">％</div>
+          <h3>Porcentajes</h3>
+          <p>Calcula porcentajes rápidamente.</p>
+          <button onclick="openTool('percentage')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="descuento"
+                 data-category="calculo">
+          <div class="tool-icon">🏷️</div>
+          <h3>Descuento</h3>
+          <p>Calcula precios con descuento.</p>
+          <button onclick="openTool('discount')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="regla de tres"
+                 data-category="calculo">
+          <div class="tool-icon">📐</div>
+          <h3>Regla de 3</h3>
+          <p>Resuelve reglas de tres simples.</p>
+          <button onclick="openTool('rule3')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="conversion unidades"
+                 data-category="calculo">
+          <div class="tool-icon">🔄</div>
+          <h3>Conversor</h3>
+          <p>Convierte diferentes unidades.</p>
+          <button onclick="openTool('converter')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="temperatura grados"
+                 data-category="calculo">
+          <div class="tool-icon">🌡️</div>
+          <h3>Temperatura</h3>
+          <p>Celsius, Fahrenheit y Kelvin.</p>
+          <button onclick="openTool('temperature')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="edad"
+                 data-category="tiempo">
+          <div class="tool-icon">🎂</div>
+          <h3>Calculadora de edad</h3>
+          <p>Calcula tu edad exacta.</p>
+          <button onclick="openTool('age')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="fecha diferencia fechas"
+                 data-category="tiempo">
+          <div class="tool-icon">📅</div>
+          <h3>Diferencia de fechas</h3>
+          <p>Calcula días entre fechas.</p>
+          <button onclick="openTool('dates')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="temporizador timer"
+                 data-category="tiempo">
+          <div class="tool-icon">⏱️</div>
+          <h3>Temporizador</h3>
+          <p>Cuenta regresiva precisa.</p>
+          <button onclick="openTool('timer')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="cronometro stopwatch"
+                 data-category="tiempo">
+          <div class="tool-icon">⏲️</div>
+          <h3>Cronómetro</h3>
+          <p>Mide el tiempo transcurrido.</p>
+          <button onclick="openTool('stopwatch')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="notas"
+                 data-category="organizacion">
+          <div class="tool-icon">📝</div>
+          <h3>Notas</h3>
+          <p>Guarda tus notas en el navegador.</p>
+          <button onclick="openTool('notes')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="tareas pendientes"
+                 data-category="organizacion">
+          <div class="tool-icon">✅</div>
+          <h3>Tareas</h3>
+          <p>Organiza tus tareas pendientes.</p>
+          <button onclick="openTool('tasks')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="lista compras"
+                 data-category="organizacion">
+          <div class="tool-icon">🛒</div>
+          <h3>Lista de compras</h3>
+          <p>Organiza lo que necesitas comprar.</p>
+          <button onclick="openTool('shopping')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="contraseña password"
+                 data-category="otros">
+          <div class="tool-icon">🔐</div>
+          <h3>Contraseñas</h3>
+          <p>Genera contraseñas aleatorias.</p>
+          <button onclick="openTool('password')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="numero aleatorio"
+                 data-category="otros">
+          <div class="tool-icon">🎲</div>
+          <h3>Número aleatorio</h3>
+          <p>Genera números al azar.</p>
+          <button onclick="openTool('random')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="dados dado"
+                 data-category="otros">
+          <div class="tool-icon">🎲</div>
+          <h3>Dados</h3>
+          <p>Lanza uno o varios dados.</p>
+          <button onclick="openTool('dice')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="contador texto palabras"
+                 data-category="texto">
+          <div class="tool-icon">🔤</div>
+          <h3>Contador de texto</h3>
+          <p>Cuenta palabras y caracteres.</p>
+          <button onclick="openTool('text')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="mayusculas minusculas"
+                 data-category="texto">
+          <div class="tool-icon">Aa</div>
+          <h3>Conversor de texto</h3>
+          <p>Cambia mayúsculas y minúsculas.</p>
+          <button onclick="openTool('case')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="propina dividir cuenta"
+                 data-category="calculo">
+          <div class="tool-icon">💵</div>
+          <h3>Propina y cuenta</h3>
+          <p>Calcula propinas y divide cuentas.</p>
+          <button onclick="openTool('tip')">Abrir</button>
+        </article>
+
+        <article class="tool-card" data-name="diccionario palabras"
+                 data-category="otros">
+          <div class="tool-icon">📖</div>
+          <h3>Diccionario</h3>
+          <p>Consulta palabras rápidamente.</p>
+          <button onclick="openTool('dictionary')">Abrir</button>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="comida" class="section panel-section">
+      <div class="section-title">
+        <span>🍔</span>
+        <div>
+          <h2>Comida</h2>
+          <p>Encuentra lugares para comer y decide dónde pedir.</p>
+        </div>
+      </div>
+
+      <div class="quick-grid">
+        <button onclick="searchMaps('restaurantes cerca de mí')">🍽️ Restaurantes</button>
+        <button onclick="searchMaps('pollerías cerca de mí')">🍗 Pollerías</button>
+        <button onclick="searchMaps('pizzerías cerca de mí')">🍕 Pizzerías</button>
+        <button onclick="searchMaps('hamburgueserías cerca de mí')">🍔 Hamburguesas</button>
+        <button onclick="searchMaps('cevicherías cerca de mí')">🐟 Cevicherías</button>
+        <button onclick="searchMaps('cafeterías cerca de mí')">☕ Cafeterías</button>
+      </div>
+
+      <div class="map-search">
+        <input id="foodSearch" placeholder="Buscar un restaurante o tipo de comida">
+        <button onclick="searchFood()">Buscar</button>
+      </div>
+    </section>
+
+    <section id="compras" class="section panel-section">
+      <div class="section-title">
+        <span>🛍️</span>
+        <div>
+          <h2>Compras</h2>
+          <p>Busca tiendas, productos y opciones antes de comprar.</p>
+        </div>
+      </div>
+
+      <div class="quick-grid">
+        <button onclick="searchMaps('supermercados cerca de mí')">🛒 Supermercados</button>
+        <button onclick="searchMaps('tiendas de ropa cerca de mí')">👕 Ropa</button>
+        <button onclick="searchMaps('tiendas de tecnología cerca de mí')">💻 Tecnología</button>
+        <button onclick="searchMaps('librerías cerca de mí')">📚 Librerías</button>
+        <button onclick="searchMaps('ferreterías cerca de mí')">🔧 Ferreterías</button>
+        <button onclick="searchMaps('tiendas cerca de mí')">🏪 Tiendas</button>
+      </div>
+
+      <div class="map-search">
+        <input id="shopSearch" placeholder="Buscar una tienda o producto">
+        <button onclick="searchShopping()">Buscar</button>
+      </div>
+    </section>
+
+    <section id="cerca" class="section panel-section">
+      <div class="section-title">
+        <span>📍</span>
+        <div>
+          <h2>Cerca de mí</h2>
+          <p>Encuentra servicios y lugares importantes.</p>
+        </div>
+      </div>
+
+      <div class="nearby-grid">
+        <button onclick="searchMaps('farmacias cerca de mí')">💊 Farmacias</button>
+        <button onclick="searchMaps('hospitales cerca de mí')">🏥 Hospitales</button>
+        <button onclick="searchMaps('supermercados cerca de mí')">🛒 Supermercados</button>
+        <button onclick="searchMaps('restaurantes cerca de mí')">🍽️ Restaurantes</button>
+        <button onclick="searchMaps('bancos cerca de mí')">🏦 Bancos</button>
+        <button onclick="searchMaps('gasolineras cerca de mí')">⛽ Gasolineras</button>
+        <button onclick="searchMaps('policía cerca de mí')">🚓 Policía</button>
+        <button onclick="searchMaps('colegios cerca de mí')">🏫 Colegios</button>
+      </div>
+    </section>
+
+    <section id="ajustes" class="section settings-section">
+      <div class="section-title">
+        <span>⚙️</span>
+        <div>
+          <h2>Ajustes</h2>
+          <p>Personaliza tu experiencia en ÚtilHub.</p>
+        </div>
+      </div>
+
+      <div class="settings-grid">
+
+        <div class="setting">
+          <div>
+            <strong>Modo oscuro</strong>
+            <span>Cambia el aspecto de la página.</span>
+          </div>
+          <label class="switch">
+            <input id="themeToggle" type="checkbox" checked>
+            <span></span>
+          </label>
+        </div>
+
+        <div class="setting">
+          <div>
+            <strong>NOVA FLOW</strong>
+            <span>Activa o desactiva las animaciones.</span>
+          </div>
+          <label class="switch">
+            <input id="animationToggle" type="checkbox" checked>
+            <span></span>
+          </label>
+        </div>
+
+        <div class="setting">
+          <div>
+            <strong>Movimiento del cursor</strong>
+            <span>Permite el efecto interactivo.</span>
+          </div>
+          <label class="switch">
+            <input id="cursorToggle" type="checkbox" checked>
+            <span></span>
+          </label>
+        </div>
+
+        <button class="setting-action" onclick="exportData()">
+          📦 Exportar datos
+        </button>
+
+        <button class="setting-action" onclick="document.getElementById('importFile').click()">
+          📥 Importar datos
+        </button>
+
+        <input id="importFile" type="file" accept=".json" hidden>
+
+        <button class="setting-action danger" onclick="clearData()">
+          🗑️ Borrar datos
+        </button>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-logo">✦ ÚtilHub V10 — Nova</div>
+    <p>NOVA FLOW · Herramientas útiles para todos.</p>
+    <small>Hecho para ser rápido, práctico y fácil de usar.</small>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-box">
+      <button class="close-modal" onclick="closeTool()">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
